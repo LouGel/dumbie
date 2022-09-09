@@ -14,6 +14,9 @@ const StyledButton = styled.button`
   border-radius: 999px;
 `;
 export const UpBar = () => {
+  const lol = () => {
+    console.log("hahah");
+  };
   return (
     <div className="upbar">
       <img src={logo} className="logo" />

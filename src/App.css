@@ -13,7 +13,7 @@
 }
 .pageCenter {
   position: absolute;
-  vertical-align: middle;
+  top: 10%;
   color: #ffffff;
   left: 10%;
   width: 90%;
@@ -28,7 +28,6 @@
   width: 100%;
   bottom: 0px;
 
-  vertical-align: top;
   justify-content: center;
 }
 .logo {

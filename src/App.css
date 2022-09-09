@@ -1,0 +1,121 @@
+.App {
+  text-align: center;
+}
+
+.upbar {
+  position: flex;
+  height: 10%;
+  left: 0px;
+  top: 0px;
+
+  /* background: #140035;
+  border: 1px solid #ffffff; */
+}
+.pageCenter {
+  position: absolute;
+  vertical-align: middle;
+  color: #ffffff;
+  left: 10%;
+  width: 90%;
+  height: 65%;
+}
+
+.downThings {
+  vertical-align: bottom;
+  position: absolute;
+  display: flex;
+  height: 25%;
+  width: 100%;
+  bottom: 0px;
+
+  vertical-align: top;
+  justify-content: center;
+}
+.logo {
+  position: absolute;
+  width: 124px;
+  height: 62px;
+  left: 3%;
+  top: 21px;
+  border-radius: 10px;
+}
+.warningRectangle {
+  margin-inline: 3em 6em;
+  background: #ffffff;
+  color: #000;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+.warningWrite {
+  color: #000;
+}
+.social {
+  position: absolute;
+  width: 68px;
+  height: 24px;
+  right: 5%;
+
+  font-family: "AttackOfMonster";
+  font-style: normal;
+
+  bottom: 5rem;
+  line-height: 24px;
+  color: #ffffff;
+}
+.centerWrite {
+  font-family: "AttackOfMonster";
+  font-style: normal;
+  margin-inline: 2em 3em;
+  bottom: 5rem;
+  line-height: 24px;
+  color: #ffffff;
+}
+.charte {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 30px;
+  line-height: 35px;
+  justify-content: center;
+
+  color: #ffffff;
+}
+
+.rond {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 879px;
+  top: 851px;
+
+  border: 1px solid #ffffff;
+}
+
+.vid {
+  position: absolute;
+  width: 30%;
+  right: 3%;
+  top: 20%;
+}
+.divInDown {
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
+}
+
+.centered {
+  display: inline-block;
+  position: absolute;
+  top: 25%;
+}
+
+.connard {
+  display: inline-block;
+  vertical-align: top;
+}
+.Copyright {
+  color: #ffffff;
+}

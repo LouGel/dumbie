@@ -1,0 +1,20 @@
+body {
+  fill: Solid;
+  background: #140035;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: "AttackOfMonster";
+  src: local("AttackOfMonster"),
+    url(./Font/AttackOfMonster.ttf) format("truetype");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+body {
+  background-image: url(./Images/stars.png);
+}

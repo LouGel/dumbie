@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.81ca65fb.css",
+    "main.js": "/static/js/main.5c73627b.js",
+    "static/js/563.bcce3d1a.chunk.js": "/static/js/563.bcce3d1a.chunk.js",
+    "static/js/942.bd2cd4e6.chunk.js": "/static/js/942.bd2cd4e6.chunk.js",
+    "static/js/787.4fb9ad67.chunk.js": "/static/js/787.4fb9ad67.chunk.js",
+    "static/js/419.c5a5c349.chunk.js": "/static/js/419.c5a5c349.chunk.js",
+    "static/js/163.09501ac9.chunk.js": "/static/js/163.09501ac9.chunk.js",
+    "static/media/stars.png": "/static/media/stars.43c86865c904e70c5660.png",
+    "static/media/AttackOfMonster.ttf": "/static/media/AttackOfMonster.37e42fb55b949f4ec66d.ttf",
+    "static/media/logopetit.png": "/static/media/logopetit.27b867f3014165b9d828.png",
+    "index.html": "/index.html",
+    "main.81ca65fb.css.map": "/static/css/main.81ca65fb.css.map",
+    "main.5c73627b.js.map": "/static/js/main.5c73627b.js.map",
+    "787.4fb9ad67.chunk.js.map": "/static/js/787.4fb9ad67.chunk.js.map",
+    "419.c5a5c349.chunk.js.map": "/static/js/419.c5a5c349.chunk.js.map",
+    "163.09501ac9.chunk.js.map": "/static/js/163.09501ac9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.81ca65fb.css",
+    "static/js/main.5c73627b.js"
+  ]
+}

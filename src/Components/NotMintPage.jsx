@@ -1,5 +1,3 @@
-import { Account } from "starknet";
-
 import { whitelist } from "../Helpers/whitelist";
 import { ConnectKitButton } from "connectkit";
 import styled from "styled-components";

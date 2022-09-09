@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.81ca65fb.css",
-    "main.js": "/static/js/main.5c73627b.js",
+    "main.css": "/static/css/main.2b236ee3.css",
+    "main.js": "/static/js/main.16b35508.js",
     "static/js/563.bcce3d1a.chunk.js": "/static/js/563.bcce3d1a.chunk.js",
-    "static/js/942.bd2cd4e6.chunk.js": "/static/js/942.bd2cd4e6.chunk.js",
+    "static/js/654.81630dd0.chunk.js": "/static/js/654.81630dd0.chunk.js",
     "static/js/787.4fb9ad67.chunk.js": "/static/js/787.4fb9ad67.chunk.js",
-    "static/js/419.c5a5c349.chunk.js": "/static/js/419.c5a5c349.chunk.js",
-    "static/js/163.09501ac9.chunk.js": "/static/js/163.09501ac9.chunk.js",
+    "static/js/419.d6c544b4.chunk.js": "/static/js/419.d6c544b4.chunk.js",
+    "static/js/163.89b19bad.chunk.js": "/static/js/163.89b19bad.chunk.js",
+    "static/media/Before_reveal.mp4": "/static/media/Before_reveal.6625e4c4839e353b30d8.mp4",
     "static/media/stars.png": "/static/media/stars.43c86865c904e70c5660.png",
     "static/media/AttackOfMonster.ttf": "/static/media/AttackOfMonster.37e42fb55b949f4ec66d.ttf",
     "static/media/logopetit.png": "/static/media/logopetit.27b867f3014165b9d828.png",
     "index.html": "/index.html",
-    "main.81ca65fb.css.map": "/static/css/main.81ca65fb.css.map",
-    "main.5c73627b.js.map": "/static/js/main.5c73627b.js.map",
+    "main.2b236ee3.css.map": "/static/css/main.2b236ee3.css.map",
+    "main.16b35508.js.map": "/static/js/main.16b35508.js.map",
     "787.4fb9ad67.chunk.js.map": "/static/js/787.4fb9ad67.chunk.js.map",
-    "419.c5a5c349.chunk.js.map": "/static/js/419.c5a5c349.chunk.js.map",
-    "163.09501ac9.chunk.js.map": "/static/js/163.09501ac9.chunk.js.map"
+    "419.d6c544b4.chunk.js.map": "/static/js/419.d6c544b4.chunk.js.map",
+    "163.89b19bad.chunk.js.map": "/static/js/163.89b19bad.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.81ca65fb.css",
-    "static/js/main.5c73627b.js"
+    "static/css/main.2b236ee3.css",
+    "static/js/main.16b35508.js"
   ]
 }

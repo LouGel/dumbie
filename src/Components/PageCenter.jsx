@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAccount, useContractRead } from "wagmi";
+import { chain, useAccount, useNetwork } from "wagmi";
 import { whitelist, getProof } from "../Helpers/whitelist";
 import { NotMintPage } from "./NotMintPage";
 import { MintingComponnents } from "./MintingComponnent";
@@ -9,6 +9,7 @@ export const PageCenter = () => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [step, setStep] = useState();
 
+  const { chain, chains } = useNetwork();
   async function fetchData() {
     // const { _data, isError, isLoading } = useContractRead({
     //   addressOrName: contractAddress,
@@ -21,7 +22,8 @@ export const PageCenter = () => {
   // if (address) fetchData();
   return (
     <div className="pageCenter">
-      {whitelist.includes(address) || (address && step > 1) ? (
+      {(whitelist.includes(address) && chain.id == 4) ||
+      (address && step > 1) ? (
         <MintingComponnents className="centered" step={step} />
       ) : (
         <NotMintPage />

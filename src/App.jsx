@@ -1,4 +1,4 @@
-import { WagmiConfig, createClient } from "wagmi";
+import { WagmiConfig, createClient, chain } from "wagmi";
 import {
   ConnectKitProvider,
   ConnectKitButton,
@@ -12,11 +12,12 @@ import { DownThings } from "./Components/DownThings";
 import { Player } from "video-react";
 if (!window.Buffer) window.Buffer = Buffer;
 const alchemyId = process.env.ALCHEMY_API_KEY;
-
+const chains = [chain.rinkeby];
 const client = createClient(
   getDefaultClient({
     appName: "Galaxy Dumbies",
     alchemyId,
+    chains,
   })
 );
 

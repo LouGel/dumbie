@@ -33,7 +33,7 @@ export const MintingComponnents = (step) => {
     <div className="centered">
       <h1 className="centerWrite">GET YOUR GALACTIC DUMBIES</h1>
       <div className="warningRectangle">
-        <a className="warningWrite">Congrats !</a>
+        <a className="warningWrite">🎉Congrats !</a>
         <br></br>
         <a className="warningWrite">
           You are whitelisted , you can mint before everyone.

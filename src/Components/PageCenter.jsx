@@ -1,4 +1,3 @@
-import { Account } from "starknet";
 import { useState } from "react";
 import { useAccount, useContractRead } from "wagmi";
 import { whitelist, getProof } from "../Helpers/whitelist";

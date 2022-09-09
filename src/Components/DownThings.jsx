@@ -3,7 +3,6 @@ import ig from "../Images/ig.png";
 import fb from "../Images/fb.png";
 import os from "../Images/os.png";
 import yt from "../Images/yt.png";
-import logo from "../Images/logopetit.png";
 import twitter from "../Images/twitter.png";
 export const DownThings = () => {
   return (

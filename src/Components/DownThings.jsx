@@ -21,7 +21,7 @@ export const DownThings = () => {
         </div>
         <div className="divInDown">
           <p className="Copyright">
-            Copyright © 2022 Galactic Dumbies - termes and conditions - legal
+            Copyright © 2022 Galactic Dumbies - terms and conditions - legal
             notice
           </p>
         </div>

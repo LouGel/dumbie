@@ -1,4 +1,4 @@
-export const contractAddress = "0xF0E8958bE26a923D3F4d5AF61B1B62a4f620E8F3";
+export const contractAddress = "0x5E7Cdcbe471FF1D3F2933e480e1C616610525efe";
 export const wlPrice = "0.01";
 export const rafflePrice = "0.01";
 export const wlMaxMint = 10;

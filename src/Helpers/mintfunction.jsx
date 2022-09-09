@@ -6,10 +6,10 @@ import {
 } from "wagmi";
 import { ethers } from "ethers";
 
-import { whitelist, getProof } from "../Helpers/whitelist";
+import { whitelist, getProof } from "./whitelist";
 import { useAccount } from "wagmi";
 
-import { contractAddress, contractAbi } from "../Helpers/contractInfo";
+import { contractAddress, contractAbi } from "./contractInfo";
 import styled from "styled-components";
 
 export function MintNFT({ nb }) {
@@ -33,14 +33,16 @@ export function MintNFT({ nb }) {
 
   return (
     <div>
-      <button disabled={!write || isLoading} onClick={() => write()}>
-        {isLoading ? "Minting..." : "Mint"}
+      <button disabled={!write} onClick={() => write()}>
+        {false ? "Minting..." : "Mint"}
       </button>
-      {isSuccess && (
+      {!(isPrepareError || isError) && data?.hash && (
         <div>
-          Successfully minted your NFT!
+          Mint asked
           <div>
-            <a href={`https://etherscan.io/tx/${data?.hash}`}>Etherscan</a>
+            <a href={`https://rinkeby.etherscan.io/tx/${data?.hash}`}>
+              Etherscan
+            </a>
           </div>
         </div>
       )}

@@ -35,9 +35,9 @@ export const NotMintPage = () => {
       ) : (
         <div>
           <h1 className="centerWrite">Enter the private sale</h1>
-          <a>
-            Connect your wallet and discover if you’re eligible to the private
-            sale of Galactic Dumbies.Get up to 2 aliens.
+          <a className="Copyright">
+            Connect your wallet and discover if you’re eligible to the <br />
+            private sale of Galactic Dumbies.Get up to 2 aliens.
           </a>
           <div>
             <ConnectKitButton.Custom>

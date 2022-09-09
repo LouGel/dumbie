@@ -48,11 +48,11 @@ export const MintingComponnents = (step) => {
         {amountToMint}
         <button onClick={increase}>+</button>
       </div>
-      <p className="charte">Price: {0.025 * amountToMint}Ξ</p>
+      <MintNFT nb={amountToMint} />
+      <p className="charte">Price: {0.01 * amountToMint}Ξ</p>
       <p className="Copyright">
         Please note that you will have to pay gas fees for each transaction.
       </p>
-      <MintNFT nb={amountToMint} />
     </div>
   );
 };

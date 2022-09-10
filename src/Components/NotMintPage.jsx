@@ -18,7 +18,7 @@ export const NotMintPage = () => {
 
   return (
     <div className="centered">
-      {chain?.id !== 4 ? (
+      {address && chain?.id !== 4 ? (
         <div className="warningRectangle">
           <a className="warningWrite">
             ⛔ You need to be on the rinkeby chain !

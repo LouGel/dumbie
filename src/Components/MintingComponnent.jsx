@@ -45,7 +45,7 @@ export const MintingComponnents = (step) => {
       <p className="maxMint">
         Number of nft to mint &#40; max. 10 per wallet &#41;
       </p>
-      <div>
+      <div className="mintNumbers">
         <FaMinusCircle onClick={decrease} className="plusMinus" />
         <a className="maxMint">{amountToMint}</a>
         <FaPlusCircle onClick={increase} className="plusMinus" />

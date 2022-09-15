@@ -32,10 +32,6 @@
   font-size: 2vh;
   /* line-height: 3vh; */
 }
-.connard {
-  display: inline-block;
-  vertical-align: top;
-}
 
 .rond {
   box-sizing: border-box;
@@ -66,7 +62,8 @@
   float: left;
   width: 200%;
 }
-
+.mintNumbers {
+}
 .maxMint {
   color: #271b3d;
   font-family: "F37Judge";
@@ -82,6 +79,8 @@
 .plusMinus {
   color: #000000;
   height: 1.8vh;
+  margin-left: 0.3vw;
+  margin-right: 0.3vw;
 }
 .error {
   font-family: "F37Judge";

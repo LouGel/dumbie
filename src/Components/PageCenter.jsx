@@ -5,6 +5,7 @@ import { NotMintPage } from "./NotMintPage";
 import { MintingComponnents } from "./MintingComponnent";
 import { contractAddress, contractAbi } from "../Helpers/contractInfo";
 import Video from "../Images/Before_reveal.mp4";
+import "./PageCenter.css";
 export const PageCenter = () => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [step, setStep] = useState();

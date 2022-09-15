@@ -6,11 +6,12 @@ import { useContractWrite, usePrepareContractWrite } from "wagmi";
 import { contractAddress, contractAbi } from "../Helpers/contractInfo";
 import styled from "styled-components";
 import { MintNFT } from "../Helpers/mintfunction";
+import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 const StyledButton = styled.button`
-  position: absolute;
+  // position: absolute;
   width: 207px;
   height: 54px;
-  font-family: AttackOfMonster;
+  font-family: F37Judge;
   color: #ffffff;
   background: #489b26;
   border-radius: 999px;
@@ -20,6 +21,7 @@ const StyledButton = styled.button`
 export const MintingComponnents = (step) => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [amountToMint, setAmountToMint] = useState(1);
+  const [error, setError] = useState("");
 
   const increase = async () => {
     const inc = amountToMint == 10 ? 10 : amountToMint + 1;
@@ -40,19 +42,19 @@ export const MintingComponnents = (step) => {
         </a>
       </div>
 
-      <p className="charte">
+      <p className="maxMint">
         Number of nft to mint &#40; max. 10 per wallet &#41;
       </p>
       <div>
-        <button onClick={decrease}>-</button>
-        {amountToMint}
-        <button onClick={increase}>+</button>
+        <FaMinusCircle onClick={decrease} className="plusMinus" />
+        <a className="maxMint">{amountToMint}</a>
+        <FaPlusCircle onClick={increase} className="plusMinus" />
       </div>
-      <MintNFT nb={amountToMint} />
-      <p className="charte">Price: {0.01 * amountToMint}Ξ</p>
-      <p className="Copyright">
+      <p className="maxMint">Price: {0.01 * amountToMint}Ξ</p>
+      <p className="prevent">
         Please note that you will have to pay gas fees for each transaction.
       </p>
+      <MintNFT nb={amountToMint} />
     </div>
   );
 };

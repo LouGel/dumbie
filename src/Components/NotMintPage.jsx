@@ -6,7 +6,7 @@ import { chainId, useAccount, useNetwork } from "wagmi";
 const StyledButton = styled.button`
   width: 207px;
   height: 54px;
-  font-family: AttackOfMonster;
+  font-family: F37Judge;
   color: #ffffff;
   background: #489b26;
   border-radius: 999px;
@@ -44,9 +44,8 @@ export const NotMintPage = () => {
           ) : (
             <div>
               <h1 className="centerWrite">Enter the private sale</h1>
-              <a className="Copyright">
-                Connect your wallet and discover if you’re eligible to the{" "}
-                <br />
+              <a className="smallTalks">
+                Connect your wallet and discover if you’re eligible to the
                 private sale of Galactic Dumbies.Get up to 2 aliens.
               </a>
               <div>

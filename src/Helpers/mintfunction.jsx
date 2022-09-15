@@ -11,6 +11,18 @@ import { useAccount } from "wagmi";
 
 import { contractAddress, contractAbi } from "./contractInfo";
 import styled from "styled-components";
+const StyledButton = styled.button`
+  // position: absolute;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  height: 3vw;
+  font-size: 1.2vw;
+
+  font-family: F37Judge;
+  color: #ffffff;
+  background: #489b26;
+  border-radius: 999px;
+`;
 
 export function MintNFT({ nb }) {
   const { address } = useAccount();
@@ -32,10 +44,10 @@ export function MintNFT({ nb }) {
   });
 
   return (
-    <div>
-      <button disabled={!write} onClick={() => write()}>
-        {false ? "Minting..." : "Mint"}
-      </button>
+    <div className="mintStuff">
+      <StyledButton disabled={!write} onClick={() => write()}>
+        {false ? "Minting..." : "MINT"}
+      </StyledButton>
       {!(isPrepareError || isError) && data?.hash && (
         <div>
           Mint asked
@@ -46,9 +58,11 @@ export function MintNFT({ nb }) {
           </div>
         </div>
       )}
-      {(isPrepareError || isError) && (
-        <div>Error: {(prepareError || error)?.message}</div>
-      )}
+      <div>
+        {(isPrepareError || isError) && (
+          <a className="error">{(prepareError || error)?.code}</a>
+        )}
+      </div>
     </div>
   );
 }

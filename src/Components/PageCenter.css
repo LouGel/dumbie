@@ -1,0 +1,89 @@
+.centerWrite {
+  font-family: "F37Judge";
+  font-style: normal;
+  font-size: 4vh;
+  bottom: 5rem;
+  line-height: 4vh;
+
+  color: #000000;
+}
+
+.vid {
+  position: absolute;
+  height: 70%;
+  width: 40%;
+  right: 1%;
+  top: 18%;
+  bottom: 25%;
+}
+
+.warningRectangle {
+  width: 50%;
+  background: #ffffff;
+  color: #000;
+  border-radius: 10px;
+  padding: 2vh;
+  size: 10vh;
+  box-shadow: 0.3vh 0.3vh 0.3vh 0.3vh grey;
+  width: 25%;
+}
+.warningWrite {
+  color: #000;
+  font-size: 2vh;
+  /* line-height: 3vh; */
+}
+.connard {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.rond {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: 879px;
+  top: 851px;
+
+  border: 1px solid #ffffff;
+}
+
+.centered {
+  display: inline-block;
+  position: absolute;
+  top: 15%;
+  bottom: 10%;
+  width: 100%;
+  left: 10%;
+}
+
+.smallTalks {
+  color: #000;
+  size: 2vh;
+}
+.mintStuff {
+  float: left;
+  width: 200%;
+}
+
+.maxMint {
+  color: #271b3d;
+  font-family: "F37Judge";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2vh;
+}
+.prevent {
+  color: black;
+  font-size: 1.8vh;
+}
+
+.plusMinus {
+  color: #000000;
+  height: 1.8vh;
+}
+.error {
+  font-family: "F37Judge";
+  color: rgba(247, 0, 0, 0.481);
+}

@@ -9,9 +9,8 @@ code {
 }
 
 @font-face {
-  font-family: "AttackOfMonster";
-  src: local("AttackOfMonster"),
-    url(./Font/AttackOfMonster.ttf) format("truetype");
+  font-family: "F37Judge";
+  src: local("F37Judge"), url(./Font/F37Judge.ttf) format("truetype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }

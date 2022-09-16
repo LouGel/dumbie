@@ -23,7 +23,7 @@ const client = createClient(
 );
 
 export const App = () => {
-  let classeReact = isMobile ? "Browser" : "Mobile";
+  let classeReact = !isMobile ? "Browser" : "Mobile";
 
   return (
     <div className={classeReact}>

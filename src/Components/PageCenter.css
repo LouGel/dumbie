@@ -9,7 +9,14 @@
 
   color: #000000;
 }
-
+.vid {
+  position: absolute;
+  height: 70%;
+  width: 40%;
+  right: 1%;
+  top: 10%;
+  bottom: 25%;
+}
 .warningRectangle {
   width: 50%;
 
@@ -27,18 +34,6 @@
   line-height: 2vh;
 }
 
-.rond {
-  box-sizing: border-box;
-
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  left: 879px;
-  top: 851px;
-
-  border: 1px solid #ffffff;
-}
-
 .centered {
   display: inline-block;
   position: absolute;
@@ -46,13 +41,6 @@
   bottom: 10%;
   width: 100%;
   left: 10%;
-}
-.mPageCenter .centered {
-  position: absolute;
-  justify-content: center;
-  height: 60%;
-  /* bottom: 0px; */
-  top: 60%;
 }
 
 .smallTalks {
@@ -63,7 +51,7 @@
 }
 .mintStuff {
   float: left;
-  width: 200%;
+  width: 100%;
 }
 
 .maxMint {
@@ -100,19 +88,50 @@
 /*0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
 /*0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
 
-.pageCenter .vid {
-  position: absolute;
-  height: 70%;
-  width: 40%;
-  right: 1%;
-  top: 18%;
-  bottom: 25%;
-}
-
 .mPageCenter .vid {
   position: absolute;
   height: 50%;
   left: 30%;
-  top: 5%;
+  top: 0%;
   width: 40%;
+}
+.mPageCenter .warningRectangle {
+  position: absolute;
+  width: 50%;
+  height: 10vw;
+  left: 20%;
+  top: 10%;
+  background: #ffffff;
+  color: #000;
+  border-radius: 10px;
+  padding: 2vh;
+  size: 10vh;
+  box-shadow: 0.3vh 0.3vh 0.3vh 0.3vh grey;
+}
+.mPageCenter .centered {
+  position: absolute;
+  justify-content: center;
+  height: 60%;
+  width: 100%;
+  left: 0%;
+  /* bottom: 0px; */
+  top: 42%;
+}
+.mPageCenter .centerWrite {
+  position: absolute;
+  font-family: "F37Judge";
+  font-style: normal;
+  font-size: 4vw;
+  left: 20%;
+  top: 0%;
+
+  line-height: 4vw;
+
+  color: #000000;
+}
+.mPageCenter .rest {
+  position: absolute;
+  height: 10%;
+  top: 30%;
+  left: 20%;
 }

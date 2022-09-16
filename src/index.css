@@ -2,7 +2,7 @@ body {
   fill: Solid;
   background: #140035;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   overflow: hidden;
 }
 

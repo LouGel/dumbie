@@ -42,19 +42,21 @@ export const MintingComponnents = (step) => {
         </a>
       </div>
 
-      <p className="maxMint">
-        Number of nft to mint &#40; max. 10 per wallet &#41;
-      </p>
-      <div className="mintNumbers">
-        <FaMinusCircle onClick={decrease} className="plusMinus" />
-        <a className="maxMint">{amountToMint}</a>
-        <FaPlusCircle onClick={increase} className="plusMinus" />
+      <div className="rest">
+        <p className="maxMint">
+          Number of nft to mint &#40; max. 10 per wallet &#41;
+        </p>
+        <div className="mintNumbers">
+          <FaMinusCircle onClick={decrease} className="plusMinus" />
+          <a className="maxMint">{amountToMint}</a>
+          <FaPlusCircle onClick={increase} className="plusMinus" />
+        </div>
+        <p className="maxMint">Price: {0.01 * amountToMint}Ξ</p>
+        <p className="prevent">
+          Please note that you will have to pay gas fees for each transaction.
+        </p>
+        <MintNFT nb={amountToMint} />
       </div>
-      <p className="maxMint">Price: {0.01 * amountToMint}Ξ</p>
-      <p className="prevent">
-        Please note that you will have to pay gas fees for each transaction.
-      </p>
-      <MintNFT nb={amountToMint} />
     </div>
   );
 };

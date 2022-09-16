@@ -18,7 +18,7 @@ const StyledButton = styled.button`
 `;
 
 // Make sure that this component is wrapped with ConnectKitProvider
-export const MintingComponnents = (step) => {
+export const MintingComponnents = (step, portable) => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [amountToMint, setAmountToMint] = useState(1);
   const [error, setError] = useState("");
@@ -55,7 +55,7 @@ export const MintingComponnents = (step) => {
         <p className="prevent">
           Please note that you will have to pay gas fees for each transaction.
         </p>
-        <MintNFT nb={amountToMint} />
+        <MintNFT nb={amountToMint} portable={portable} />
       </div>
     </div>
   );

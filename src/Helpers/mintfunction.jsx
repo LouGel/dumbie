@@ -11,20 +11,20 @@ import { useAccount } from "wagmi";
 
 import { contractAddress, contractAbi } from "./contractInfo";
 import styled from "styled-components";
-const StyledButton = styled.button`
-  // position: absolute;
-  padding-left: 3vw;
-  padding-right: 3vw;
-  height: 3vw;
-  font-size: 1.2vw;
 
-  font-family: F37Judge;
-  color: #ffffff;
-  background: #489b26;
-  border-radius: 999px;
-`;
+export function MintNFT({ nb, portable }) {
+  const StyledButton = styled.button`
+    // position: absolute;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    height: 3vw;
+    font-size: 1.2vw;
 
-export function MintNFT({ nb }) {
+    font-family: F37Judge;
+    color: #ffffff;
+    background: #489b26;
+    border-radius: 999px;
+  `;
   const { address } = useAccount();
   const {
     config,
@@ -50,7 +50,7 @@ export function MintNFT({ nb }) {
       </StyledButton>
       {!(isPrepareError || isError) && data?.hash && (
         <div>
-          Mint asked
+          <a className="prevent">Mint asked</a>
           <div>
             <a href={`https://rinkeby.etherscan.io/tx/${data?.hash}`}>
               Etherscan

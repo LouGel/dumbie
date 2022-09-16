@@ -30,7 +30,11 @@ export const PageCenter = ({ portable }) => {
       )}
       {(whitelist.includes(address) && chain.id == 4) ||
       (address && step > 1) ? (
-        <MintingComponnents className="centered" step={step} />
+        <MintingComponnents
+          className="centered"
+          step={step}
+          portable={portable}
+        />
       ) : (
         <NotMintPage className="centered" />
       )}

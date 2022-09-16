@@ -46,11 +46,13 @@
 /*0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
 .mPageCenter {
   position: absolute;
-
-  top: 10%;
-  color: #ffffff;
+  vertical-align: bottom;
+  position: absolute;
+  display: flex;
   height: 75%;
   width: 100%;
   background-size: 100% 100%;
   background-image: url("./Images/background2.png");
+  justify-content: center;
+  bottom: 15%;
 }

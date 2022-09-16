@@ -8,7 +8,7 @@ import { Buffer } from "buffer";
 import { UpBar } from "./Components/UpBar";
 import { PageCenter } from "./Components/PageCenter";
 import { DownThings } from "./Components/DownThings";
-import { isMobile } from "react-device-detect";
+import { isMobile, BrowserView, MobileView } from "react-device-detect";
 import { Player } from "video-react";
 
 if (!window.Buffer) window.Buffer = Buffer;
@@ -23,18 +23,11 @@ const client = createClient(
 );
 
 export const App = () => {
-  let classeReact = isMobile ? "wrapper" : "";
-  const rotateView = {
-    flex: 1,
-    transform: [
-      {
-        rotate: "-90deg",
-      },
-    ],
-  };
+  let classeReact = isMobile ? "Browser" : "Mobile";
 
   return (
     <div className={classeReact}>
+      <h1>{isMobile}</h1>
       <WagmiConfig client={client}>
         <ConnectKitProvider
           customTheme={{
@@ -43,7 +36,7 @@ export const App = () => {
         >
           <UpBar />
 
-          <PageCenter />
+          <PageCenter portable={isMobile} />
 
           <DownThings />
         </ConnectKitProvider>

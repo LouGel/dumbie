@@ -105,8 +105,8 @@
   background: #ffffff;
   color: #000;
   border-radius: 10px;
-  padding: 1%;
-  height: 10vh;
+
+  height: 10%;
   box-shadow: 0.3vh 0.3vh 0.3vh 0.3vh grey;
 }
 .mPageCenter .centered {
@@ -131,17 +131,40 @@
 
   color: #000000;
 }
-.mPageCenter .warningWrite {
-  top: 0%;
+.mPageCenter .warningRectangle {
+  position: absolute;
+  width: 100%;
+  word-wrap: break-word !important;
+  height: 12%;
+  padding: 1%;
+  /* left: 20%; */
+  top: 15%;
+  background: #ffffff;
   color: #000;
+  border-radius: 10px;
+
+  /* height: rel; */
+  box-shadow: 0.3vh 0.3vh 0.3vh 0.3vh grey;
+}
+.mPageCenter .warningWrite {
+  height: 3%;
+  position: absolute;
+  color: #000;
+  font-size: 1vh;
+  line-height: 1vh;
+}
+.mPageCenter br {
+  padding: 0;
+  margin: 0;
+  line-height: 1vw;
 }
 .mPageCenter .rest {
-  position: relative;
+  position: absolute;
   /* position: absolute; */
 
   /* height: 60%; */
   justify-content: center;
-  top: 25%;
+  top: 30%;
 
   width: 100%;
 }

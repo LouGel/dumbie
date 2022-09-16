@@ -23,7 +23,7 @@ const client = createClient(
 );
 
 export const App = () => {
-  let classeReact = "";
+  let classeReact = isMobile ? "wrapper" : "";
   const rotateView = {
     flex: 1,
     transform: [
@@ -32,7 +32,7 @@ export const App = () => {
       },
     ],
   };
-  if (isMobile) classeReact = "wrapper";
+
   return (
     <div className={classeReact}>
       <WagmiConfig client={client}>

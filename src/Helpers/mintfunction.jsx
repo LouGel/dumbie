@@ -13,18 +13,32 @@ import { contractAddress, contractAbi } from "./contractInfo";
 import styled from "styled-components";
 
 export function MintNFT({ nb, portable }) {
-  const StyledButton = styled.button`
-    // position: absolute;
-    padding-left: 3vw;
-    padding-right: 3vw;
-    height: 3vw;
-    font-size: 1.2vw;
+  const StyledButton = !portable
+    ? styled.button`
+        // position: absolute;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        height: 3vw;
+        font-size: 1.2vw;
 
-    font-family: F37Judge;
-    color: #ffffff;
-    background: #489b26;
-    border-radius: 999px;
-  `;
+        font-family: F37Judge;
+        color: #ffffff;
+        background: #489b26;
+        border-radius: 999px;
+      `
+    : styled.button`
+        position: absolute;
+        left: 30%;
+        padding-left: 3vw;
+        padding-right: 3vw;
+        height: 3vh;
+        font-size: 1.2vw;
+
+        font-family: F37Judge;
+        color: #ffffff;
+        background: #489b26;
+        border-radius: 999px;
+      `;
   const { address } = useAccount();
   const {
     config,

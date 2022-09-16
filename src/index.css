@@ -1,9 +1,11 @@
 body {
+  font: url("https://fonts.google.com/specimen/Inter");
   fill: Solid;
   background: #140035;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+  background-image: url(./Images/stars.png);
 }
 
 code {
@@ -16,7 +18,4 @@ code {
   src: local("F37Judge"), url(./Font/F37Judge.ttf) format("truetype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
-}
-body {
-  background-image: url(./Images/stars.png);
 }

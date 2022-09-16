@@ -119,7 +119,7 @@
   left: 30%;
 }
 .mPageCenter .centerWrite {
-  position: relative;
+  position: absolute;
   width: 100%;
   font-family: "F37Judge";
   font-style: normal;

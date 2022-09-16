@@ -14,7 +14,7 @@ const StyledButton = styled.button`
   border-radius: 999px;
 `;
 
-export const NotMintPage = () => {
+export const NotMintPage = (portable) => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const { chain, chains } = useNetwork();
 
@@ -35,11 +35,8 @@ export const NotMintPage = () => {
                 <a className="warningWrite">⛔Sorry !</a>
                 <br></br>
                 <a className="warningWrite">
-                  You are on not on the whitelist with this wallet.
-                </a>
-                <br />
-                <a className="warningWrite">
-                  You can mint your NFT during the public sale.
+                  You are on not on the whitelist with this wallet. You can mint
+                  your NFT during the public sale.
                 </a>
               </div>
             </div>

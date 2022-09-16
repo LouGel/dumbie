@@ -29,7 +29,7 @@ export const PageCenter = ({ portable }) => {
           loop
           src={Video}
           autoPlay
-          playsinline
+          playsInline
           muted
         ></video>
       ) : (

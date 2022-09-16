@@ -1,4 +1,4 @@
-import { WagmiConfig, createClient, chain } from "wagmi";
+import { WagmiConfig, createClient, chain, useSwitchNetwork } from "wagmi";
 import {
   ConnectKitProvider,
   ConnectKitButton,
@@ -9,7 +9,6 @@ import { UpBar } from "./Components/UpBar";
 import { PageCenter } from "./Components/PageCenter";
 import { DownThings } from "./Components/DownThings";
 import { isMobile, BrowserView, MobileView } from "react-device-detect";
-import { Player } from "video-react";
 
 if (!window.Buffer) window.Buffer = Buffer;
 const alchemyId = process.env.ALCHEMY_API_KEY;

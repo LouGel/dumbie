@@ -58,11 +58,6 @@ export function MintNFT({ nb, portable }) {
           </div>
         </div>
       )}
-      <div>
-        {(isPrepareError || isError) && (
-          <a className="error">{(prepareError || error)?.code}</a>
-        )}
-      </div>
     </div>
   );
 }

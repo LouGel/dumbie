@@ -14,7 +14,7 @@ const StyledButton = styled.button`
   border-radius: 999px;
 `;
 
-export const NotMintPage = (portable) => {
+export const NotMintPage = () => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const { chain, chains } = useNetwork();
 
@@ -48,7 +48,7 @@ export const NotMintPage = (portable) => {
                 <br></br>
                 private sale of Galactic Dumbies.Get up to 2 aliens.
               </a>
-              <div>
+              <div className="connect">
                 <ConnectKitButton.Custom>
                   {({ isConnected, show, truncatedAddress, ensName }) => {
                     return (

@@ -19,7 +19,7 @@
   color: #ffffff;
   width: 100%;
   background-size: 100% 100%;
-  background-image: url("./Images/background2.png");
+  background-image: url("./Images/background3.png");
   height: 75%;
 }
 
@@ -52,7 +52,7 @@
   height: 75%;
   width: 100%;
   background-size: 100% 100%;
-  background-image: url("./Images/background2.png");
+  background-image: url("./Images/background3.png");
   justify-content: center;
   bottom: 15%;
 }

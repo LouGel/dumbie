@@ -24,7 +24,14 @@ export const PageCenter = ({ portable }) => {
   return (
     <div className={portable ? "mPageCenter" : "pageCenter"}>
       {portable ? (
-        <video className="vid" loop src={Video} autoPlay muted></video>
+        <video
+          className="vid"
+          loop
+          src={Video}
+          autoPlay
+          playsinline
+          muted
+        ></video>
       ) : (
         ""
       )}

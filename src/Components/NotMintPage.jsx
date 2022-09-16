@@ -1,4 +1,3 @@
-import { whitelist } from "../Helpers/whitelist";
 import { ConnectKitButton } from "connectkit";
 import styled from "styled-components";
 import { chainId, useAccount, useNetwork } from "wagmi";
@@ -8,6 +7,7 @@ const StyledButton = styled.button`
   padding-left: 3%;
   padding-right: 3%;
   height: 10%;
+  letter-spacing: 1.5px;
   font-family: F37Judge;
   color: #ffffff;
   background: #489b26;
@@ -41,13 +41,19 @@ export const NotMintPage = () => {
               </div>
             </div>
           ) : (
-            <div>
+            <div className="">
+              <br />
+              <br />
+              <br />
               <h1 className="centerWrite">Enter the private sale</h1>
               <a className="smallTalks">
                 Connect your wallet and discover if you’re eligible to the
                 <br></br>
                 private sale of Galactic Dumbies.Get up to 2 aliens.
               </a>
+              <br></br>
+              <br></br>
+              <br></br>
               <div className="connect">
                 <ConnectKitButton.Custom>
                   {({ isConnected, show, truncatedAddress, ensName }) => {

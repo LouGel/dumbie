@@ -9,6 +9,7 @@ const StyledButton = styled.button`
   padding-right: 3%;
   height: 6%;
   right: 1%;
+  letter-spacing: 1.5px;
   top: 2%;
   font-family: F37Judge;
   color: #ffffff;

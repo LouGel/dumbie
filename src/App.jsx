@@ -8,8 +8,9 @@ import { Buffer } from "buffer";
 import { UpBar } from "./Components/UpBar";
 import { PageCenter } from "./Components/PageCenter";
 import { DownThings } from "./Components/DownThings";
-
+import { isMobile } from "react-device-detect";
 import { Player } from "video-react";
+
 if (!window.Buffer) window.Buffer = Buffer;
 const alchemyId = process.env.ALCHEMY_API_KEY;
 const chains = [chain.rinkeby];
@@ -22,19 +23,31 @@ const client = createClient(
 );
 
 export const App = () => {
+  let classeReact = "";
+  const rotateView = {
+    flex: 1,
+    transform: [
+      {
+        rotate: "-90deg",
+      },
+    ],
+  };
+  if (isMobile) classeReact = "wrapper";
   return (
-    <WagmiConfig client={client}>
-      <ConnectKitProvider
-        customTheme={{
-          "--ck-font-family": '"Comic Sans MS", "Comic Sans", cursive',
-        }}
-      >
-        <UpBar />
+    <div className={classeReact}>
+      <WagmiConfig client={client}>
+        <ConnectKitProvider
+          customTheme={{
+            "--ck-font-family": '"Comic Sans MS", "Comic Sans", cursive',
+          }}
+        >
+          <UpBar />
 
-        <PageCenter />
+          <PageCenter />
 
-        <DownThings />
-      </ConnectKitProvider>
-    </WagmiConfig>
+          <DownThings />
+        </ConnectKitProvider>
+      </WagmiConfig>
+    </div>
   );
 };

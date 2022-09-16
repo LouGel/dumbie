@@ -1,6 +1,9 @@
 body {
   fill: Solid;
   background: #140035;
+
+  margin: 0;
+  overflow: hidden;
 }
 
 code {
@@ -8,6 +11,10 @@ code {
     monospace;
 }
 
+.wrapper {
+  transform: rotate(90deg);
+  overflow: auto;
+}
 @font-face {
   font-family: "F37Judge";
   src: local("F37Judge"), url(./Font/F37Judge.ttf) format("truetype");

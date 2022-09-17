@@ -1,5 +1,22 @@
+@font-face {
+  font-family: "F37Judge";
+  src: local("F37Judge"), url(./Font/F37Judge.ttf) format("truetype");
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: "F37Judge-Medium";
+  src: url(./Font/F37Judge-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "F37Judge-Regular";
+  src: url(./Font/F37Judge-Regular.ttf) format("truetype");
+}
+
 body {
-  font-family: Inter, system-ui;
+  font-family: F37Judge-Regular, Inter, system-ui;
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
@@ -10,11 +27,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-@font-face {
-  font-family: "F37Judge";
-  src: local("F37Judge"), url(./Font/F37Judge.ttf) format("truetype");
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
 }

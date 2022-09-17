@@ -9,6 +9,15 @@
     color: black;
 }
 
+.centerWriteFail {
+    font-family: "F37Judge", system-ui;
+    font-style: normal;
+    font-size: xxx-large;
+    bottom: 5rem;
+    margin-bottom: 0;
+    color: black;
+}
+
 .centerWriteConnected {
     font-family: "F37Judge", system-ui;
     font-style: normal;
@@ -172,7 +181,7 @@
 
 }
 
-.mPageCenter .centerWrite {
+.mPageCenter .centerWriteFail {
     position: absolute;
     font-family: "F37Judge", system-ui;
     font-style: normal;
@@ -181,6 +190,17 @@
     height: 10%;
     color: black;
     left: 7%;
+}
+
+.mPageCenter .centerWrite {
+    position: absolute;
+    font-family: "F37Judge", system-ui;
+    font-style: normal;
+    font-size: xx-large;
+    top: 5%;
+    height: 10%;
+    color: black;
+    left: 12%;
 }
 
 .mPageCenter .centerWriteConnected {

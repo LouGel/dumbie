@@ -37,7 +37,7 @@ export const NotMintPage = () => {
                 <div>
                     {address ? (
                         <div>
-                            <h1 className="centerWrite">GET YOUR GALACTIC DUMBIES</h1>
+                            <h1 className="centerWriteFail">GET YOUR GALACTIC DUMBIES</h1>
                             <div className="warningRectangleFail">
                                 <div className="iconWarningRectangle">
                                     <img src={failIcon}/>

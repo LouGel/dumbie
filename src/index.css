@@ -24,7 +24,11 @@ body {
   background: #140035 url("./Images/stars.png");
 }
 
-h {
+h1 {
+  font-family: F37Judge, system-ui;
+}
+
+p {
   font-family: F37Judge, system-ui;
 }
 

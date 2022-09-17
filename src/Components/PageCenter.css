@@ -40,6 +40,10 @@
 }
 
 .warningRectangle p {
+    font-family: Inter, system-ui;
+}
+
+.warningRectangle p {
     margin: 0;
 }
 
@@ -91,6 +95,7 @@
 .prevent {
     color: black;
     font-size: 1.8vh;
+    font-family: Inter, system-ui;
 }
 
 .plusMinus {

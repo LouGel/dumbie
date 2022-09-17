@@ -16,12 +16,16 @@
 }
 
 body {
-  font-family: F37Judge-Regular, Inter, system-ui;
+  font-family: Inter, system-ui;
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
   background: #140035 url("./Images/stars.png");
+}
+
+h {
+  font-family: F37Judge, system-ui;
 }
 
 code {

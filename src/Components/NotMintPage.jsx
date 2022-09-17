@@ -1,6 +1,7 @@
 import {ConnectKitButton, ConnectKitProvider} from "connectkit";
 import styled from "styled-components";
 import {chainId, useAccount, useNetwork} from "wagmi";
+import failIcon from "../Images/failIcon.svg";
 
 const StyledButton = styled.button`
   padding-left: 3%;
@@ -24,7 +25,7 @@ export const NotMintPage = () => {
             {address && chain?.id !== 4 ? (
                 <div className="warningRectangle">
                     <div className="iconWarningRectangle">
-                        ⛔
+                        <img src={failIcon}/>
                     </div>
                     <div className="textWarningRectangle">
                         <a>
@@ -39,7 +40,7 @@ export const NotMintPage = () => {
                             <h1 className="centerWrite">GET YOUR GALACTIC DUMBIES</h1>
                             <div className="warningRectangle">
                                 <div className="iconWarningRectangle">
-                                    ⛔
+                                    <img src={failIcon}/>
                                 </div>
                                 <div className="textWarningRectangle">
                                     <p>Sorry !</p>

@@ -12,11 +12,12 @@ export const StyledButton = styled.button`
   right: 1%;
   letter-spacing: 1.5px;
   top: 2%;
-  font-family: F37Judge,system-ui;
+  font-family: F37Judge, system-ui;
   color: white;
   background: #489b26;
   border-radius: 999px;
   font-size: x-large;
+  border-color: transparent;
 `;
 
 export const UpBar = () => {

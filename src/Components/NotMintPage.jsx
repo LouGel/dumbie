@@ -12,6 +12,7 @@ const StyledButton = styled.button`
   background: #489b26;
   border-radius: 999px;
   font-size: x-large;
+  border-color: transparent;
 `;
 
 export const NotMintPage = () => {

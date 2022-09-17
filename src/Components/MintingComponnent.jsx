@@ -36,9 +36,9 @@ export const MintingComponnents = (step, portable) => {
                     Number of nft to mint &#40; max. 10 per wallet &#41;
                 </p>
                 <div className="mintNumbers">
-                    <FaMinusCircle onClick={decrease} className="plusMinus"/>
+                    <FaMinusCircle size={portable ? 25 : 35} onClick={decrease} className="plusMinus"/>
                     <a className="maxMint">&nbsp;{amountToMint}&nbsp;</a>
-                    <FaPlusCircle onClick={increase} className="plusMinus"/>
+                    <FaPlusCircle size={portable ? 25 : 35} onClick={increase} className="plusMinus"/>
                 </div>
                 <p className="maxMint">Price: {0.01 * amountToMint}Ξ</p>
                 <p className="prevent">

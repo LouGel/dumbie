@@ -22,6 +22,7 @@ export function MintNFT({ nb, portable }) {
     color: white;
     background: #489b26;
     border-radius: 999px;
+    border-color: transparent;
   `;
   const { address } = useAccount();
   const {

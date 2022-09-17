@@ -22,9 +22,14 @@ export const NotMintPage = () => {
         <div className="centered">
             {address && chain?.id !== 4 ? (
                 <div className="warningRectangle">
-                    <a className="warningWrite">
-                        ⛔ You need to be on the rinkeby chain !
-                    </a>
+                    <div className="iconWarningRectangle">
+                        ⛔
+                    </div>
+                    <div className="textWarningRectangle">
+                        <a>
+                            You need to be in the Rinkeby chain !
+                        </a>
+                    </div>
                 </div>
             ) : (
                 <div>
@@ -32,11 +37,16 @@ export const NotMintPage = () => {
                         <div>
                             <h1 className="centerWrite">GET YOUR GALACTIC DUMBIES</h1>
                             <div className="warningRectangle">
-                                <a className="warningWrite">⛔Sorry !</a>
-                                <a className="warningWrite">
-                                    You are on not on the whitelist with this wallet. You can mint
-                                    your NFT during the public sale.
-                                </a>
+                                <div className="iconWarningRectangle">
+                                    ⛔
+                                </div>
+                                <div className="textWarningRectangle">
+                                    <p>Sorry !</p>
+                                    <p>
+                                        You are on not on the whitelist with this wallet. You can mint
+                                        your NFT during the public sale.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     ) : (

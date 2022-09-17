@@ -14,14 +14,12 @@ import styled from "styled-components";
 
 export function MintNFT({ nb, portable }) {
   const StyledButton = styled.button`
-    // position: absolute;
     padding-left: 5vh;
     padding-right: 5vh;
-    height: 5vh;
-    font-size: 2vh;
-
-    font-family: F37Judge;
-    color: #ffffff;
+    height: 6vh;
+    font-size: x-large;
+    font-family: F37Judge,system-ui;
+    color: white;
     background: #489b26;
     border-radius: 999px;
   `;
@@ -46,7 +44,7 @@ export function MintNFT({ nb, portable }) {
   return (
     <div className="mintStuff">
       <StyledButton disabled={!write} onClick={() => write()}>
-        {false ? "Minting..." : "MINT"}
+        {"MINT"}
       </StyledButton>
       {!(isPrepareError || isError) && data?.hash && (
         <div>

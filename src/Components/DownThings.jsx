@@ -5,6 +5,7 @@ import os from "../Images/os.png";
 import yt from "../Images/yt.png";
 import twitter from "../Images/twitter.png";
 import "./DownThings.css";
+
 export const DownThings = () => {
   return (
     <div className="downThings">

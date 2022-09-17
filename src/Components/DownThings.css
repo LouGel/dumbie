@@ -4,7 +4,7 @@
   font-size: 1vh;
 }
 .charte {
-  font-family: "F37Judge";
+  font-family: "F37Judge", system-ui;
   font-style: normal;
   font-weight: 200;
   font-size: 2.6vh;
@@ -14,12 +14,12 @@
   color: #ffffff;
 }
 .social {
-  position: absolute;
+  position: relative;
   width: 68px;
   /* height: 24px; */
   /* right: 5%; */
 
-  font-family: "F37Judge";
+  font-family: "F37Judge", system-ui;
   font-style: normal;
 
   bottom: 0px;

@@ -6,10 +6,10 @@ import { MintingComponnents } from "./MintingComponnent";
 import { contractAddress, contractAbi } from "../Helpers/contractInfo";
 import Video from "../Images/Before_reveal.mp4";
 import "./PageCenter.css";
+
 export const PageCenter = ({ portable }) => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [step, setStep] = useState();
-  console.log(portable);
   const { chain, chains } = useNetwork();
   async function fetchData() {
     // const { _data, isError, isLoading } = useContractRead({
@@ -35,7 +35,7 @@ export const PageCenter = ({ portable }) => {
       ) : (
         ""
       )}
-      {(whitelist.includes(address) && chain.id == 4) ||
+      {(whitelist.includes(address) && chain.id === 4) ||
       (address && step > 1) ? (
         <MintingComponnents
           className="centered"

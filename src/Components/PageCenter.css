@@ -29,10 +29,10 @@
 
 .videoContainer {
     position: absolute;
-    top: 17%;
+    top: 13%;
     left: 70%;
-    width: 347px;
-    height: 404px;
+    width: 407px;
+    height: 474px;
     border-radius: 6px;
     overflow: hidden;
 }

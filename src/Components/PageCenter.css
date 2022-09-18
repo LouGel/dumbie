@@ -159,6 +159,7 @@
     position: absolute;
     height: 30%;
     width: 95%;
+    top: 7%;
 }
 
 .mPageCenter .warningRectangle {
@@ -186,7 +187,7 @@
 .mPageCenter .centered {
     display: inline-block;
     align-items: center;
-    top: 35%;
+    top: 30%;
     width: 100%;
     position: relative;
     height: 100%;
@@ -279,7 +280,7 @@
 
 .mPageCenter .connect {
     position: absolute;
-    top: 40%;
+    top: 45%;
     height: 100%;
     width: 400%;
     left: 10%;

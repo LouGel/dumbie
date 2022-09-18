@@ -40,7 +40,7 @@ export const MintingComponnents = (step, portable) => {
                     <a className="maxMint">&nbsp;{amountToMint}&nbsp;</a>
                     <FaPlusCircle size={portable ? 25 : 35} onClick={increase} className="plusMinus"/>
                 </div>
-                <p className="priceTag">Price: {0.01 * amountToMint}Ξ</p>
+                <p className="maxMint">Price: {0.01 * amountToMint}Ξ</p>
                 <p className="prevent">
                     Please note that you will have to pay gas fees for each transaction.
                 </p>

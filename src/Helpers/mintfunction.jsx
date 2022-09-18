@@ -49,10 +49,9 @@ export function MintNFT({ nb, portable }) {
       </StyledButton>
       {!(isPrepareError || isError) && data?.hash && (
         <div>
-          <a className="prevent">Mint asked</a>
           <div>
-            <a href={`https://rinkeby.etherscan.io/tx/${data?.hash}`}>
-              Etherscan
+            <a style={{fontFamily: 'F37Judge', fontSize: 'x-large', textDecoration: 'none'}} href={`https://rinkeby.etherscan.io/tx/${data?.hash}`}>
+              Transaction link
             </a>
           </div>
         </div>

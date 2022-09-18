@@ -26,6 +26,17 @@ export function MintNFT({ nb, portable }) {
     border-radius: 999px;
   `;
   const { address } = useAccount();
+  // const {
+  //   config,
+  //   error: prepareError,
+  //   isError: isPrepareError,
+  // } = usePrepareContractWrite({
+  //   addressOrName: contractAddress,
+  //   contractInterface: contractAbi,
+  //   functionName: "whitelistMint",
+  //   args: [nb, getProof(address)],
+  //   overrides: { value: ethers.utils.parseEther("0.01").mul(nb) },
+  // });
   const {
     config,
     error: prepareError,
@@ -33,8 +44,8 @@ export function MintNFT({ nb, portable }) {
   } = usePrepareContractWrite({
     addressOrName: contractAddress,
     contractInterface: contractAbi,
-    functionName: "whitelistMint",
-    args: [nb, getProof(address)],
+    functionName: "raffleMint",
+    args: [nb /*getProof(address)*/],
     overrides: { value: ethers.utils.parseEther("0.01").mul(nb) },
   });
   const { data, error, isError, write } = useContractWrite(config);
@@ -42,6 +53,7 @@ export function MintNFT({ nb, portable }) {
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
   });
+  console.log(error?.code);
 
   return (
     <div className="mintStuff">
@@ -52,8 +64,12 @@ export function MintNFT({ nb, portable }) {
         <div>
           <a className="prevent">Mint asked</a>
           <div>
-            <a href={`https://rinkeby.etherscan.io/tx/${data?.hash}`}>
+            {/* <a href={`https://rinkeby.etherscan.io/tx/${data?.hash}`}>
               Etherscan
+            </a> */}
+            <a href={`https://testnets.opensea.io/${address}`}>
+              Thanks for your purchase, see your NFTs on Opensea after a short
+              delay
             </a>
           </div>
         </div>

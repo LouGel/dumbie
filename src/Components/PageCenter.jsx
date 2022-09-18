@@ -8,7 +8,7 @@ import Video from "../Images/Before_reveal.mp4";
 import "./PageCenter.css";
 export const PageCenter = ({ portable }) => {
   const { address, isConnecting, isDisconnected } = useAccount();
-  const [step, setStep] = useState();
+  const [step, setStep] = useState(2);
   console.log(portable);
   const { chain, chains } = useNetwork();
   async function fetchData() {
@@ -17,7 +17,7 @@ export const PageCenter = ({ portable }) => {
     //   contractInterface: contractAbi,
     //   functionName: "variables",
     // });
-    const _data = { step: 1, nothing: 2 };
+    const _data = { step: 2, nothing: 2 };
     setStep(_data.step);
   }
   // if (address) fetchData();
@@ -35,16 +35,18 @@ export const PageCenter = ({ portable }) => {
       ) : (
         ""
       )}
-      {(whitelist.includes(address) && chain.id == 4) ||
-      (address && step > 1) ? (
-        <MintingComponnents
-          className="centered"
-          step={step}
-          portable={portable}
-        />
-      ) : (
-        <NotMintPage className="centered" />
-      )}
+      {
+        /*whitelist.includes(address) &&*/ chain.id == 4 ||
+        (address && step > 1) ? (
+          <MintingComponnents
+            className="centered"
+            step={step}
+            portable={portable}
+          />
+        ) : (
+          <NotMintPage className="centered" />
+        )
+      }
       {portable ? (
         ""
       ) : (

@@ -12,18 +12,17 @@ import { useAccount } from "wagmi";
 import { contractAddress, contractAbi } from "./contractInfo";
 import styled from "styled-components";
 
-export function MintNFT({ nb, portable }) {
+export function MintNFT({ nb, portable, setError, setPerror, setHash }) {
   const StyledButton = styled.button`
-    // position: absolute;
     padding-left: 5vh;
     padding-right: 5vh;
-    height: 5vh;
-    font-size: 2vh;
-
-    font-family: F37Judge;
-    color: #ffffff;
+    height: 6vh;
+    font-size: x-large;
+    font-family: F37Judge, system-ui;
+    color: white;
     background: #489b26;
     border-radius: 999px;
+    border-color: transparent;
   `;
   const { address } = useAccount();
   // const {
@@ -53,27 +52,38 @@ export function MintNFT({ nb, portable }) {
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
   });
+  setHash(data?.hash);
+  setPerror(isPrepareError);
+  setError(isError);
   console.log(error?.code);
 
   return (
     <div className="mintStuff">
       <StyledButton disabled={!write} onClick={() => write()}>
-        {false ? "Minting..." : "MINT"}
+        {"MINT"}
       </StyledButton>
-      {!(isPrepareError || isError) && data?.hash && (
-        <div>
-          <a className="prevent">Mint asked</a>
-          <div>
-            {/* <a href={`https://rinkeby.etherscan.io/tx/${data?.hash}`}>
-              Etherscan
-            </a> */}
-            <a href={`https://testnets.opensea.io/${address}`}>
-              Thanks for your purchase, see your NFTs on Opensea after a short
-              delay
-            </a>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
+
+//{!(isPrepareError || isError) && data?.hash && (
+//  <div>
+//    <div>
+//      {/* <a href={`https://rinkeby.etherscan.io/tx/${data?.hash}`}>
+//        Etherscan
+//      </a> */}
+//      <a
+//        style={{
+//          fontFamily: "F37Judge",
+//          // fontSize: "x-large",
+//          textDecoration: "none",
+//        }}
+//        href={`https://testnets.opensea.io/${address}`}
+//        target="_blank"
+//      >
+//        Thanks for your purchase, see your NFTs on Opensea after a short
+//        delay
+//      </a>
+//    </div>
+//  </div>
+//)}

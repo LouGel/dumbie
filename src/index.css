@@ -1,21 +1,38 @@
-body {
-  font: url("https://fonts.google.com/specimen/Inter");
-  fill: Solid;
-  background: #140035;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-  background-image: url(./Images/stars.png);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 @font-face {
   font-family: "F37Judge";
   src: local("F37Judge"), url(./Font/F37Judge.ttf) format("truetype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: "F37Judge-Medium";
+  src: url(./Font/F37Judge-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "F37Judge-Regular";
+  src: url(./Font/F37Judge-Regular.ttf) format("truetype");
+}
+
+body {
+  font-family: Inter, system-ui;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #140035 url("./Images/stars.png");
+}
+
+h1 {
+  font-family: F37Judge, system-ui;
+}
+
+p {
+  font-family: F37Judge, system-ui;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }

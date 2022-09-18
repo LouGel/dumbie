@@ -1,76 +1,85 @@
-import { ConnectKitButton } from "connectkit";
+import {ConnectKitButton, ConnectKitProvider} from "connectkit";
 import styled from "styled-components";
-import { chainId, useAccount, useNetwork } from "wagmi";
+import {chainId, useAccount, useNetwork} from "wagmi";
+import failIcon from "../Images/failIcon.svg";
 
 const StyledButton = styled.button`
-  position: absolute;
   padding-left: 3%;
   padding-right: 3%;
-  height: 10%;
+  height: 6vh;
   letter-spacing: 1.5px;
-  font-family: F37Judge;
-  color: #ffffff;
+  font-family: F37Judge, system-ui;
+  color: white;
   background: #489b26;
   border-radius: 999px;
+  font-size: x-large;
+  border-color: transparent;
 `;
 
 export const NotMintPage = () => {
-  const { address, isConnecting, isDisconnected } = useAccount();
-  const { chain, chains } = useNetwork();
+    const {address, isConnecting, isDisconnected} = useAccount();
+    const {chain, chains} = useNetwork();
 
-  return (
-    <div className="centered">
-      {address && chain?.id !== 4 ? (
-        <div className="warningRectangle">
-          <a className="warningWrite">
-            ⛔ You need to be on the rinkeby chain !
-          </a>
+    return (
+        <div className="centered">
+            {address && chain?.id !== 4 ? (
+                <div className="warningRectangle">
+                    <div className="iconWarningRectangle">
+                        <img src={failIcon}/>
+                    </div>
+                    <div className="textWarningRectangle">
+                        <a>
+                            You need to be in the Rinkeby chain !
+                        </a>
+                    </div>
+                </div>
+            ) : (
+                <div>
+                    {address ? (
+                        <div>
+                            <h1 className="centerWriteFail">GET YOUR GALACTIC DUMBIES</h1>
+                            <div className="warningRectangleFail">
+                                <div className="iconWarningRectangle">
+                                    <img src={failIcon}/>
+                                </div>
+                                <div className="textWarningRectangle">
+                                    <p>Sorry !</p>
+                                    <p>
+                                        You are on not on the whitelist with this wallet. You can mint
+                                        your NFT during the public sale.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <div>
+                            <h1 className="centerWrite">Enter the private sale</h1>
+                            <div className="smallTalks">
+                                <p>
+                                    Connect your wallet and discover if you’re eligible to the
+                                    private sale of Galactic Dumbies.
+                                </p>
+                                <p>
+                                    Get up to 2 aliens.
+                                </p>
+                            </div>
+                            <div className="connect">
+                                <ConnectKitButton.Custom>
+                                    {({isConnected, show, truncatedAddress, ensName}) => {
+                                        return (
+                                            <StyledButton onClick={show}>
+                                                {isConnected
+                                                    ? ensName ?? truncatedAddress
+                                                    : "Connect Wallet"}
+                                            </StyledButton>
+                                        );
+                                    }}
+                                </ConnectKitButton.Custom>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
-      ) : (
-        <div>
-          {address ? (
-            <div>
-              <h1 className="centerWrite">GET YOUR GALACTIC DUMBIES</h1>
-              <div className="warningRectangle">
-                <a className="warningWrite">⛔Sorry !</a>
-                <br></br>
-                <a className="warningWrite">
-                  You are on not on the whitelist with this wallet. You can mint
-                  your NFT during the public sale.
-                </a>
-              </div>
-            </div>
-          ) : (
-            <div className="">
-              <br />
-              <br />
-              <br />
-              <h1 className="centerWrite">Enter the private sale</h1>
-              <a className="smallTalks">
-                Connect your wallet and discover if you’re eligible to the
-                <br></br>
-                private sale of Galactic Dumbies.Get up to 2 aliens.
-              </a>
-              <br></br>
-              <br></br>
-              <br></br>
-              <div className="connect">
-                <ConnectKitButton.Custom>
-                  {({ isConnected, show, truncatedAddress, ensName }) => {
-                    return (
-                      <StyledButton onClick={show}>
-                        {isConnected
-                          ? ensName ?? truncatedAddress
-                          : "Connect Wallet"}
-                      </StyledButton>
-                    );
-                  }}
-                </ConnectKitButton.Custom>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
+    );
 };

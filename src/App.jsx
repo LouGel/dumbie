@@ -1,18 +1,17 @@
 import {Buffer} from "buffer";
-import {UpBar} from "./Components/UpBar";
-import {PageCenter} from "./Components/PageCenter";
-import {DownThings} from "./Components/DownThings";
-import {isMobile, BrowserView, MobileView} from "react-device-detect";
+import {Header} from "./Components/Header";
+import {Page} from "./Components/Page";
+import {Footer} from "./Components/Footer";
 
 if (!window.Buffer) window.Buffer = Buffer;
 
 export const App = () => {
-    let classeReact = isMobile ? "Mobile" : "Browser";
     return (
-        <div className={classeReact}>
-            <UpBar/>
-            <PageCenter portable={isMobile}/>
-            <DownThings/>
-        </div>
+        <section className="bg-black/20 flex flex-col justify-start items-center h-[100vh] overflow-y-scroll">
+            <Header/>
+            <Page />
+            <div className="flex-grow"></div>
+            <Footer/>
+        </section>
     );
 };

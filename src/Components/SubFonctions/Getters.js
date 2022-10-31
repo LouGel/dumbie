@@ -1,5 +1,9 @@
 import { chain, useAccount, useNetwork, useContractRead } from "wagmi";
-import { contractAddress, contractAbi } from "../../Helpers/contractInfo";
+import {
+  contractAddress,
+  contractAbi,
+  hardstep,
+} from "../../Helpers/contractInfo";
 
 export function GetStep() {
   const { data, error } = useContractRead({
@@ -12,11 +16,12 @@ export function GetStep() {
     : {
         maxSupply: 12000,
         totalSupply: 0,
-        step: 0,
+        step: hardstep,
         merkleRoot:
           "0x0000000000000000000000000000000000000000000000000000000000000000",
         baseURI: "http://api.galacticdumbies-mint.io/nfts/",
       };
+  console.log(data);
   console.log("Data : " + data);
   return { variables, error };
 }

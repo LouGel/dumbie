@@ -30,37 +30,39 @@ export const NotMintPage = ({ step }) => {
       : "Connect your wallet and discover if you’re eligible to the  private sale of Galactic Dumbies.";
 
   return (
-    <div>
+    <div className="text-center p-4 md:p-8 text-white text-sm text-md">
       {isConnected && chain?.id !== contractChainid ? (
         <div className="">
           <div className="">
             <img src={failIcon} alt="fail" />
           </div>
           <div className="">
-            <a>You need to be in the Rinkeby chain !</a>
+            <a>You need to be in the Mumbai chain !</a>
           </div>
         </div>
       ) : (
         <div>
           {isConnected ? (
             <div>
-              <h1 className="text-[30px] md:text-[64px] leading-[30px] md:leading-[64px] mb-5">GET YOUR GALACTIC DUMBIES</h1>
-              <div className="flex bg-white rounded-xl p-2 md:p-5 items-center">
+              <h1 className="text-[30px] md:text-[64px] leading-[30px] md:leading-[64px] mb-5">
+                GET YOUR GALACTIC DUMBIES
+              </h1>
+              <div className="flex bg-white rounded-xl p-2 md:p-5 items-center mb-20">
                 <div className="mr-5">
-                  <img src={failIcon} alt="fail"/>
+                  <img src={failIcon} alt="fail" />
                 </div>
                 <div className="flex flex-col text-black items-start text-left text-xs md:text-sm">
                   <p>Sorry !</p>
-                  <p>
-                    You are on not on the whitelist with this wallet. You can
-                    mint your NFT during the public sale.
-                  </p>
+                  <p>You are on not on the whitelist with this wallet.</p>
+                  <p> You can mint your NFT during the public sale.</p>
                 </div>
               </div>
             </div>
           ) : (
             <div className="text-center p-5 pb-10">
-              <h1 className="text-[64px]">Enter the {title} sale</h1>
+              <h1 className="leading-[64px] text-[64px]">
+                Enter the {title} sale
+              </h1>
               <div className="font-inter font-bold text-xl max-w-[500px] px-3">
                 <p>{talks}</p>
               </div>
@@ -68,8 +70,14 @@ export const NotMintPage = ({ step }) => {
               <ConnectKitButton.Custom>
                 {({ isConnected, show, truncatedAddress, ensName }) => {
                   return (
-                    <button type="button" onClick={show} className="bg-green rounded-xl space-y-2 font-judge tracking-widest text-[32px] px-4 py-5 mt-8">
-                      {isConnected ? ensName ?? truncatedAddress : "Connect Wallet"}
+                    <button
+                      type="button"
+                      onClick={show}
+                      className="bg-green rounded-xl space-y-2 font-judge tracking-widest text-[32px] px-4 py-5 mt-8"
+                    >
+                      {isConnected
+                        ? ensName ?? truncatedAddress
+                        : "Connect Wallet"}
                     </button>
                   );
                 }}

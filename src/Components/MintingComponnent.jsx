@@ -7,7 +7,7 @@ import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 export const MintingComponnents = ({ step, portable, totalSupply }) => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [amountToMint, setAmountToMint] = useState(1);
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
   const [pError, setPError] = useState();
   const [hash, setHash] = useState();
   console.log("STep ", step);
@@ -20,26 +20,33 @@ export const MintingComponnents = ({ step, portable, totalSupply }) => {
     setAmountToMint(dec);
   };
   return (
-    <div className="text-center p-4 md:p-8 text-white text-sm text-md">
-      <h1 className="text-[30px] md:text-[64px] leading-[30px] md:leading-[64px] mb-5">GET YOUR GALACTIC DUMBIES</h1>
-      <div className="flex bg-white rounded-xl p-2 md:p-5 items-center">
-        <div className="mr-5">&#127881;</div>
-        <div className="flex flex-col text-black items-start text-left text-xs md:text-sm">
-          <p>Congrats !</p>
-          {!error && hash ? (
-            <a
-              className="font-judge text-blue"
-              href={`https://testnets.opensea.io/${address}`}
-              target="_blank" rel="noreferrer"
-            >
-              Thanks for your purchase,click here to see your NFTs on Opensea
-              after a short delay
-            </a>
-          ) : (
-            <p>You are whitelisted, you can mint before everyone.</p>
-          )}
+    <div className="text-center p-4 md:p-8 text-white text-sm text-md min-h-[400px]">
+      <h1 className="text-[30px] md:text-[64px] leading-[30px] md:leading-[64px] mb-10">
+        GET YOUR GALACTIC DUMBIES
+      </h1>
+      {step !== 2 ? (
+        <div className="flex bg-white rounded-xl p-2 md:p-5 items-center">
+          <div className="mr-5">&#127881;</div>
+          <div className="flex flex-col text-black items-start text-left text-xs md:text-sm">
+            <p>Congrats !</p>
+            {!error && hash ? (
+              <a
+                className="font-judge text-blue"
+                href={`https://testnets.opensea.io/${address}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Thanks for your purchase,click here to see your NFTs on Opensea
+                after a short delay
+              </a>
+            ) : (
+              <p>You are whitelisted, you can mint before everyone.</p>
+            )}
+          </div>
         </div>
-      </div>
+      ) : (
+        ""
+      )}
       <div className="text-white mt-5 text-left">
         <p className="font-judge text-xl tracking-wide">
           Number of nft to mint &#40; max. 10 per wallet &#41;
@@ -50,7 +57,9 @@ export const MintingComponnents = ({ step, portable, totalSupply }) => {
             onClick={decrease}
             className="text-white bg-green rounded-full"
           />
-          <span className="font-judge text-[25px] mx-3 mt-2">&nbsp;{amountToMint}&nbsp;</span>
+          <span className="font-judge text-[25px] mx-3 mt-2">
+            &nbsp;{amountToMint}&nbsp;
+          </span>
           <FaPlusCircle
             size={portable ? 25 : 35}
             onClick={increase}
@@ -75,14 +84,25 @@ export const MintingComponnents = ({ step, portable, totalSupply }) => {
           ) : (
             <MintNFT
               nb={amountToMint}
-              portable={portable}
               setPerror={setPError}
               setError={setError}
               setHash={setHash}
+              //TODO: update link
+              etherscanUrl={`https://testnets.opensea.io/${address}`}
+              openseaUrl={`https://testnets.opensea.io/${address}`}
             />
           )}
-          <p className="mt-2 sm:mt-0 sm:ml-2 text-xs sm-text:sm">{totalSupply}/12,000 Galactic Dumbies MINTED</p>
+          <p className="mt-2 sm:mt-0 sm:ml-2 text-xs sm-text:sm">
+            {totalSupply}/12,000 Galactic Dumbies MINTED
+          </p>
         </div>
+        {!error ? (
+          ""
+        ) : (
+          <p className="flex flex-col sm:flex-row sm:items-center mt-3">
+            {error}
+          </p>
+        )}
       </div>
     </div>
   );

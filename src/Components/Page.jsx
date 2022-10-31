@@ -15,7 +15,7 @@ export const Page = ({ portable }) => {
   console.log(error);
   return (
     <div className="flex mx-auto mt-[100px]">
-      <div className="bg-purple/80 rounded-xl md:mt-20 mx-7 !text-white overflow-scroll">
+      <div className="bg-purple/80 rounded-xl md:mt-20 mx-7 !text-white">
         {(whitelist.includes(address) && chain.id === contractChainid) ||
         (isConnected && variables.step > 1) ? (
           <MintingComponnents

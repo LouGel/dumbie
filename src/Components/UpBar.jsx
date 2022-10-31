@@ -1,8 +1,9 @@
-import {ConnectKitButton, ConnectKitProvider} from "connectkit";
+import { ConnectKitButton, ConnectKitProvider } from "connectkit";
 import logo from "../Images/logopetit.png";
 import "../App.css";
 import styled from "styled-components";
 import "./UpBar.css";
+import { useAccount } from "wagmi";
 
 export const StyledButton = styled.button`
   position: absolute;
@@ -21,18 +22,23 @@ export const StyledButton = styled.button`
 `;
 
 export const UpBar = () => {
-    return (
-        <div className="upbar">
-            <img src={logo} className="logo" alt='dumbies-logo'/>
-            <ConnectKitButton.Custom>
-                {({isConnected, show, truncatedAddress, ensName}) => {
-                    return (
-                        <StyledButton onClick={show}>
-                            {isConnected ? ensName ?? truncatedAddress : "Connect Wallet"}
-                        </StyledButton>
-                    );
-                }}
-            </ConnectKitButton.Custom>
-        </div>
-    );
+  const { isConnected } = useAccount();
+  return (
+    <div className="upbar">
+      <img src={logo} className="logo" alt="dumbies-logo" />
+      {isConnected ? (
+        <ConnectKitButton.Custom>
+          {({ isConnected, show, truncatedAddress, ensName }) => {
+            return (
+              <StyledButton onClick={show}>
+                {isConnected ? ensName ?? truncatedAddress : "Connect Wallet"}
+              </StyledButton>
+            );
+          }}
+        </ConnectKitButton.Custom>
+      ) : (
+        ""
+      )}
+    </div>
+  );
 };

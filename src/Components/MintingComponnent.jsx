@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
-import { MintNFT } from "../Helpers/mintfunction";
+import { MintNFT, WlMintNft } from "../Helpers/mintfunction";
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
 // Make sure that this component is wrapped with ConnectKitProvider
-export const MintingComponnents = (step, portable) => {
+export const MintingComponnents = ({ step, portable, totalSupply }) => {
   const { address, isConnecting, isDisconnected } = useAccount();
   const [amountToMint, setAmountToMint] = useState(1);
   const [error, setError] = useState();
   const [pError, setPError] = useState();
   const [hash, setHash] = useState();
+  console.log("STep ", step);
   const increase = async () => {
     const inc = amountToMint === 10 ? 10 : amountToMint + 1;
     setAmountToMint(inc);
@@ -65,13 +66,24 @@ export const MintingComponnents = (step, portable) => {
         <p className="prevent">
           Please note that you will have to pay gas fees for each transaction.
         </p>
-        <MintNFT
-          nb={amountToMint}
-          portable={portable}
-          setPerror={setPError}
-          setError={setError}
-          setHash={setHash}
-        />
+        {2 > step ? (
+          <WlMintNft
+            nb={amountToMint}
+            portable={portable}
+            setPerror={setPError}
+            setError={setError}
+            setHash={setHash}
+          />
+        ) : (
+          <MintNFT
+            nb={amountToMint}
+            portable={portable}
+            setPerror={setPError}
+            setError={setError}
+            setHash={setHash}
+          />
+        )}
+        <p>{totalSupply}/12,000 Galactic Dumbies MINTED</p>
       </div>
     </div>
   );

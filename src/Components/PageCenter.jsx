@@ -1,56 +1,36 @@
 import { useState } from "react";
-import { chain, useAccount, useNetwork } from "wagmi";
+import { chain, useAccount, useNetwork, useContractRead } from "wagmi";
 import { whitelist, getProof } from "../Helpers/whitelist";
 import { NotMintPage } from "./NotMintPage";
 import { MintingComponnents } from "./MintingComponnent";
-import { contractAddress, contractAbi } from "../Helpers/contractInfo";
-import Video from "../Images/Before_reveal.mp4";
+import { contractChainid } from "../Helpers/contractInfo";
+
+import { GetStep } from "./SubFonctions/Getters";
+
 import "./PageCenter.css";
 
 export const PageCenter = ({ portable }) => {
-  const { address, isConnecting, isDisconnected } = useAccount();
-  const [step, setStep] = useState(2);
-  console.log(portable);
+  const { address, isConnected, isDisconnected } = useAccount();
+  console.log(address);
   const { chain, chains } = useNetwork();
-  async function fetchData() {
-    // const { _data, isError, isLoading } = useContractRead({
-    //   addressOrName: contractAddress,
-    //   contractInterface: contractAbi,
-    //   functionName: "variables",
-    // });
-    const _data = { step: 2, nothing: 2 };
-    setStep(_data.step);
-  }
-  // if (address) fetchData();
+  const { variables, error } = GetStep();
+  console.log("Data : " + variables);
+  console.log(error);
   return (
     <div className={portable ? "mPageCenter" : "pageCenter"}>
-      {portable ? (
-        <video
-          className="vid"
-          loop
-          src={Video}
-          autoPlay
-          playsInline
-          muted
-        ></video>
-      ) : (
-        ""
-      )}
-      {(whitelist.includes(address) && chain.id == 4) ||
-      (address && step > 1) ? (
-        <MintingComponnents
-          className="centered"
-          step={step}
-          portable={portable}
-        />
-      ) : (
-        <NotMintPage className="centered" />
-      )}
-      {portable ? (
-        ""
-      ) : (
-        <video className="vid" loop src={Video} autoPlay muted></video>
-      )}
+      <div className="interact-panel">
+        {(whitelist.includes(address) && chain.id == contractChainid) ||
+        (isConnected && variables.step > 1) ? (
+          <MintingComponnents
+            className="centered"
+            step={variables.step}
+            portable={portable}
+            totalSupply={variables.totalSupply}
+          />
+        ) : (
+          <NotMintPage className="centered" step={variables.step} />
+        )}
+      </div>
     </div>
   );
 };

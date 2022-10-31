@@ -21,7 +21,8 @@ body {
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
-  background: #140035 url("./Images/stars.png");
+  background: #140035 url("./Images/stars.png") no-repeat center fixed;
+  background-size: cover;
 }
 
 h1 {

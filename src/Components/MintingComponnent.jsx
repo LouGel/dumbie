@@ -20,70 +20,69 @@ export const MintingComponnents = ({ step, portable, totalSupply }) => {
     setAmountToMint(dec);
   };
   return (
-    <div className="centered">
-      <h1 className="centerWriteConnected">GET YOUR GALACTIC DUMBIES</h1>
-      <div className="warningRectangle">
-        <div className="iconWarningRectangle">&#127881;</div>
-        <div className="textWarningRectangle">
+    <div className="text-center p-4 md:p-8 text-white text-sm text-md">
+      <h1 className="text-[30px] md:text-[64px] leading-[30px] md:leading-[64px] mb-5">GET YOUR GALACTIC DUMBIES</h1>
+      <div className="flex bg-white rounded-xl p-2 md:p-5 items-center">
+        <div className="mr-5">&#127881;</div>
+        <div className="flex flex-col text-black items-start text-left text-xs md:text-sm">
           <p>Congrats !</p>
           {!error && hash ? (
             <a
-              style={{
-                fontFamily: "F37Judge",
-                // fontSize: "x-large",
-                color: "blue",
-                textDecoration: "none",
-              }}
+              className="font-judge text-blue"
               href={`https://testnets.opensea.io/${address}`}
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               Thanks for your purchase,click here to see your NFTs on Opensea
               after a short delay
             </a>
           ) : (
-            <p>You are whitelisted , you can mint before everyone.</p>
+            <p>You are whitelisted, you can mint before everyone.</p>
           )}
         </div>
       </div>
-      <div className="rest">
-        <p className="maxMint">
+      <div className="text-white mt-5 text-left">
+        <p className="font-judge text-xl tracking-wide">
           Number of nft to mint &#40; max. 10 per wallet &#41;
         </p>
-        <div className="mintNumbers">
+        <div className="flex mt-3">
           <FaMinusCircle
             size={portable ? 25 : 35}
             onClick={decrease}
-            className="plusMinus"
+            className="text-white bg-green rounded-full"
           />
-          <a className="maxMint">&nbsp;{amountToMint}&nbsp;</a>
+          <span className="font-judge text-[25px] mx-3 mt-2">&nbsp;{amountToMint}&nbsp;</span>
           <FaPlusCircle
             size={portable ? 25 : 35}
             onClick={increase}
-            className="plusMinus"
+            className="text-white bg-green rounded-full"
           />
         </div>
-        <p className="toMint">Price: {0.01 * amountToMint}Ξ</p>
-        <p className="prevent">
+        <p className="mt-3 font-inter">Price: {0.01 * amountToMint}Ξ</p>
+        <small className="font-inter font-thin">
           Please note that you will have to pay gas fees for each transaction.
-        </p>
-        {2 > step ? (
-          <WlMintNft
-            nb={amountToMint}
-            portable={portable}
-            setPerror={setPError}
-            setError={setError}
-            setHash={setHash}
-          />
-        ) : (
-          <MintNFT
-            nb={amountToMint}
-            portable={portable}
-            setPerror={setPError}
-            setError={setError}
-            setHash={setHash}
-          />
-        )}
-        <p>{totalSupply}/12,000 Galactic Dumbies MINTED</p>
+        </small>
+        <div className="flex flex-col sm:flex-row sm:items-center mt-3">
+          {2 > step ? (
+            <WlMintNft
+              nb={amountToMint}
+              setPerror={setPError}
+              setError={setError}
+              setHash={setHash}
+              //TODO: update link
+              etherscanUrl={`https://testnets.opensea.io/${address}`}
+              openseaUrl={`https://testnets.opensea.io/${address}`}
+            />
+          ) : (
+            <MintNFT
+              nb={amountToMint}
+              portable={portable}
+              setPerror={setPError}
+              setError={setError}
+              setHash={setHash}
+            />
+          )}
+          <p className="mt-2 sm:mt-0 sm:ml-2 text-xs sm-text:sm">{totalSupply}/12,000 Galactic Dumbies MINTED</p>
+        </div>
       </div>
     </div>
   );

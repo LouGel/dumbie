@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { chain, useAccount, useNetwork, useContractRead } from "wagmi";
 import { whitelist, getProof } from "../Helpers/whitelist";
 import { NotMintPage } from "./NotMintPage";
@@ -7,9 +6,7 @@ import { contractChainid } from "../Helpers/contractInfo";
 
 import { GetStep } from "./SubFonctions/Getters";
 
-import "./PageCenter.css";
-
-export const PageCenter = ({ portable }) => {
+export const Page = ({ portable }) => {
   const { address, isConnected, isDisconnected } = useAccount();
   console.log(address);
   const { chain, chains } = useNetwork();
@@ -17,9 +14,9 @@ export const PageCenter = ({ portable }) => {
   console.log("Data : " + variables);
   console.log(error);
   return (
-    <div className={portable ? "mPageCenter" : "pageCenter"}>
-      <div className="interact-panel">
-        {(whitelist.includes(address) && chain.id == contractChainid) ||
+    <div className="flex mx-auto mt-[100px]">
+      <div className="bg-purple/80 rounded-xl md:mt-20 mx-7 !text-white overflow-scroll">
+        {(whitelist.includes(address) && chain.id === contractChainid) ||
         (isConnected && variables.step > 1) ? (
           <MintingComponnents
             className="centered"

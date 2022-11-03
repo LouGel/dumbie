@@ -4,7 +4,7 @@ export const rafflePrice = "0.01";
 export const wlMaxMint = 10;
 export const rafflemaxMint = 10;
 export const contractChainid = 80001;
-export const hardstep = 1;
+export const hardstep = 2;
 export const contractAbi = [
   {
     inputs: [

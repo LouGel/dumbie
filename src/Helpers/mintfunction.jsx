@@ -19,6 +19,7 @@ export function MintNFT({
   etherscanUrl,
   openseaUrl,
 }) {
+  const [ethUrl, setEthUrl] = useAccount("");
   const { address } = useAccount();
   const {
     config,
@@ -36,6 +37,7 @@ export function MintNFT({
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
   });
+  setEthUrl(etherscanUrl + data?.hash);
   setHash(data?.hash);
   setPerror(isPrepareError);
   setError(error ? error.code : null);
@@ -66,7 +68,7 @@ export function MintNFT({
                     color="green"
                     className="animate-spin mx-auto"
                   />
-                  <a className="mt-5 block" href={etherscanUrl}>
+                  <a className="mt-5 block" href={ethUrl}>
                     Open on Etherscan
                   </a>
                 </>
@@ -102,6 +104,7 @@ export function WlMintNft({
   openseaUrl,
 }) {
   const { address } = useAccount();
+  const [ethUrl, setEthUrl] = useAccount("");
   const {
     config,
     error: prepareError,
@@ -118,6 +121,7 @@ export function WlMintNft({
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
   });
+  setEthUrl(etherscanUrl + data?.hash);
   setHash(data?.hash);
   setPerror(isPrepareError);
   setError(error ? error.code : null);
@@ -147,7 +151,7 @@ export function WlMintNft({
                     color="green"
                     className="animate-spin"
                   />
-                  <a className="mt-5 block" href={etherscanUrl}>
+                  <a className="mt-5 block" href={ethUrl}>
                     Open on Etherscan
                   </a>
                 </>

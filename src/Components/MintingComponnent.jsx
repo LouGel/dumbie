@@ -78,7 +78,7 @@ export const MintingComponnents = ({ step, portable, totalSupply }) => {
               setError={setError}
               setHash={setHash}
               //TODO: update link
-              etherscanUrl={`https://testnets.opensea.io/${address}`}
+              etherscanUrl={`https://mumbai.polygonscan.com/tx/`}
               openseaUrl={`https://testnets.opensea.io/${address}`}
             />
           ) : (
@@ -88,7 +88,7 @@ export const MintingComponnents = ({ step, portable, totalSupply }) => {
               setError={setError}
               setHash={setHash}
               //TODO: update link
-              etherscanUrl={`https://testnets.opensea.io/${address}`}
+              etherscanUrl={`https://mumbai.polygonscan.com/tx/`}
               openseaUrl={`https://testnets.opensea.io/${address}`}
             />
           )}
